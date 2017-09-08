@@ -5,21 +5,9 @@
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
-## membersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
 
 
-### Association
-- belongs_to :group
-- belongs_to :user
-
-
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,35 +22,37 @@ Please feel free to use a different markup language if you do not plan to run
 - belongs_to :user
 
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index:true, unique: true|
+|mail|string|null: false, index:true, unique: true|
+|password|string|null: false|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
-- belongs_to :group
-- has_many : group, through : user_group
-- has_many : message
+### Association
+- has_many : groups, through : user_groups
+- has_many : users_groups
+- has_many : messages
 
-## user_groupテーブル
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|string|null: false, index:true, unique: true|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
-- belongs_to :group
-- belongs_to :user
+### Association
+- has_many :groups
+- has_many :users
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index:true, unique: true|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
-- belongs_to :user
-- has_many : user, through : user_group
-- has_many : message
+### Association
+- has_many : users, through : users_groups
+- has_many : users_groups
+- has_many : messages
 
