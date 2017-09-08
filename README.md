@@ -40,7 +40,7 @@ Please feel free to use a different markup language if you do not plan to run
 |name|string|null: false, index:true, unique: true|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :group
 - has_many : group, through : user_group
 - has_many : message
@@ -51,7 +51,7 @@ Please feel free to use a different markup language if you do not plan to run
 |user_id|string|null: false, index:true, unique: true|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
 
@@ -61,7 +61,7 @@ Please feel free to use a different markup language if you do not plan to run
 |name|string|null: false, index:true, unique: true|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :user
 - has_many : user, through : user_group
 - has_many : message
