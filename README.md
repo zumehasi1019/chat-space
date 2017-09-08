@@ -31,9 +31,9 @@ Please feel free to use a different markup language if you do not plan to run
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many : group, through : user_group
+- has_many : groups, through : user_groups
 - has_many : users_groups
-- has_many : message
+- has_many : messages
 
 ## users_groupsテーブル
 |Column|Type|Options|
