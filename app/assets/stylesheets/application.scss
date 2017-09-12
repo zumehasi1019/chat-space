@@ -1,0 +1,157 @@
+@import "./reset";
+@import "font-awesome";
+
+
+.chat-side{
+height: 100vh;
+width: 300px;
+background-color: #2f3e51;
+position: relative;
+float:left;
+  &__user{
+    background-color:#090c10;
+    width: 100%;
+    height: 15%;
+  }
+  &__name{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 30px;
+    padding-right:80px;
+    position: relative;
+    float:left;
+  }
+&--fa{
+    color: white;
+    padding-top:30px;
+    float: left;
+ }
+ &__group{
+  height: 85%
+ }
+ &__group__chat{
+  padding:20px;
+  font-size:15px;
+  color: white;
+ }
+}
+
+.main-side{
+  height: 100vh;
+  width:calc(100vw - 300px);
+  float: left;
+  &__header{
+    height: 15%;
+    border:1px solid #eee;
+  }
+  &__header--group{
+    margin:0 40px;
+  }
+  &__header--group clearfix{
+    padding: 0px;
+  }
+  &__header--group--edit-btn{
+  float:right;
+  color:#38AEF0;
+  border:1px solid #38AEF0;
+  font-size: 15px;
+  padding:12.5px 20px;
+  margin:28px 40px 0;
+ }
+&__header--members{
+  color:#998;
+  font-size: 12px;
+  margin:0 40px;
+  padding-top:85px;
+}
+&__body{
+  height: calc( 100vh - 15% - 90px );
+  overflow-y: scroll;
+}
+&__body__message clearfix{
+  padding-top:20px;
+}
+
+&__message-name{
+  color:black;
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  padding-top:30px;
+  padding-left:40px;
+ }
+ &__message-time{
+  color:#998;
+  font-size: 12px;
+  padding:0 10px 10px;
+  float:left;
+  padding-top:30px;
+ }
+&__message-body{
+clear: both;
+padding-left: 40px;
+
+ }
+&__footer{
+  height:90px;
+  width: 100%;
+  background-color: #B8C3C7;
+ }
+&__footer-form{
+  margin: 0 40px;
+  position: relative;
+ }
+&__footer-body{
+  position: relative
+ }
+&__footer-body
+.message{
+  height: 20px;
+  width: calc( 100% - 130px );
+  padding: 15px 10px;
+  margin: 20px 0;
+  border: none;
+ }
+}
+.image{
+  display: none;
+}
+
+.chat-file{
+  height: 50px;
+  width: 40px;
+  margin: 32px 130px 20px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.fa-file-image-o{
+  padding-left: 20px;
+}
+
+.submit{
+  color: #fff;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: #38AEF0;
+  margin: 20px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+ }
+
+
+
+p{
+font-size: 20px;
+float: left;
+margin:35px 0 15px;
+}
+
+h1{
+  font-size: 10px;
+}
