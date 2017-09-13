@@ -6,11 +6,11 @@
 .chat-side{
 height: 100vh;
 width: 300px;
-background-color: #2f3e51;
+background-color: $chat-color;
 position: relative;
 float:left;
   &__user{
-    background-color:#090c10;
+    background-color:$user-color;
     width: 100%;
     height: 15%;
   }

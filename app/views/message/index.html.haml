@@ -4,9 +4,9 @@
   .chat-side
     .chat-side__user
       .chat-side__name user-name
-       %a.chat-side__user--new-group{href: "/groups/new"}
+       %link_to.chat-side__user--new-group{href: "/groups/new"}
          %i.chat-side--fa.fa.fa-pencil-square-o.fa-small
-        %a.chat-side__user--edit-user{href: "users/edit"}
+        %link_to.chat-side__user--edit-user{href: "users/edit"}
           %i.chat-side--fa.fa.fa-cog.fa-small
         .chat-side__groups
   .chat-side__group
@@ -19,7 +19,7 @@
   .main-side__header
     .main-side__header--group.clearfix
      %p aaaa
-       %a.main-side__header--group--edit-btn{href: "/groups/edit"} edit
+       %link_to.main-side__header--group--edit-btn{href: "/groups/edit"} edit
  .main-side__body
   .main-side__header--members MEMBERS:zume1019
     .main-side__body__message-list
