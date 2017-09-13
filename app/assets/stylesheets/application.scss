@@ -1,5 +1,6 @@
 @import "./reset";
 @import "font-awesome";
+@import "./variable";
 
 
 .chat-side{
@@ -14,7 +15,7 @@ float:left;
     height: 15%;
   }
   &__name{
-    color: #fff;
+    color: $default-color-1;
     font-size: 20px;
     font-weight: bold;
     margin: 20px 30px;
@@ -34,7 +35,7 @@ float:left;
  &__group__chat{
   padding:20px;
   font-size:15px;
-  color: white;
+  color: $default-color-1;
  }
 }
 
@@ -42,82 +43,80 @@ float:left;
   height: 100vh;
   width:calc(100vw - 300px);
   float: left;
-  &__header{
-    height: 15%;
-    border:1px solid #eee;
-  }
-  &__header--group{
-    margin:0 40px;
-  }
-  &__header--group{
-    padding: 0px;
-  }
-  &__header--group--edit-btn{
-  float:right;
-  color:#38AEF0;
-  border:1px solid #38AEF0;
-  font-size: 15px;
-  padding:12.5px 20px;
-  margin:-50px 40px 0;
+    &__header{
+     height: 15%;
+     border:1px solid #eee;
+     }
+       &__header--group{
+        margin:0 40px;
+      }
+       &__header--group{
+        padding: 0px;
+      }
+          &__header--group--edit-btn{
+            float:right;
+            color:#38AEF0;
+            border:1px solid $btn-color;
+            font-size: 15px;
+            padding:12.5px 20px;
+            margin:-50px 40px 0;
+             }
+          &__header--members{
+          color:#998;
+          font-size: 12px;
+          margin: 5px;
+          padding-top:-20px;
+          padding-left:35px;
+        }
+      &__body{
+        height: calc( 100vh - 70% - 90px );
+        overflow-y: scroll;
+      }
+          &__message clearfix{
+            padding-top:20px;
+          }
+          &__message-name{
+          color:black;
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+          padding-top:30px;
+          padding-left:40px;
+         }
+         &__message-time{
+          color:#998;
+          font-size: 12px;
+          padding:0 10px 10px;
+          float:left;
+          padding-top:30px;
+         }
+        &__message-body{
+        clear: both;
+        padding-left: 40px;
 
- }
-&__header--members{
-  color:#998;
-  font-size: 12px;
-  margin: 5px;
-  padding-top:-20px;
-  padding-left:35px;
-}
-&__body{
-  height: calc( 100vh - 70% - 90px );
-  overflow-y: scroll;
-}
-&__body__message clearfix{
-  padding-top:20px;
-}
-
-&__message-name{
-  color:black;
-  font-size: 16px;
-  font-weight: bold;
-  float: left;
-  padding-top:30px;
-  padding-left:40px;
- }
- &__message-time{
-  color:#998;
-  font-size: 12px;
-  padding:0 10px 10px;
-  float:left;
-  padding-top:30px;
- }
-&__message-body{
-clear: both;
-padding-left: 40px;
-
- }
-&__footer{
-  height:90px;
-  width: 100%;
-  background-color: #B8C3C7;
-  margin-bottom: 20px;
- }
-&__footer-form{
-  margin: 0 40px;
-  position: relative;
- }
-&__footer-body{
-  position: relative
- }
-&__footer-body
-.message{
-  height: 20px;
-  width: calc( 100% - 130px );
-  padding: 15px 10px;
-  margin: 20px 0;
-  border: none;
- }
-}
+     }
+  &__footer{
+   height:90px;
+   width: 100%;
+   background-color: #B8C3C7;
+   margin-bottom: 20px;
+  }
+    &__footer-form{
+      margin: 0 40px;
+      position: relative;
+     }
+    &__footer-body{
+      position: relative
+     }
+    &__footer-body
+    .message{
+      height: 20px;
+      width: calc( 100% - 130px );
+      padding: 15px 10px;
+      margin: 20px 0;
+      border: none;
+     }
+    }
 .image{
   display: none;
 }
@@ -140,7 +139,7 @@ padding-left: 40px;
   width: 100px;
   height: 50px;
   text-align: center;
-  background-color: #38AEF0;
+  background-color: $btn-color;
   margin: 20px 0;
   position: absolute;
   top: 0;
