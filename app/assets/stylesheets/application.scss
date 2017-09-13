@@ -19,12 +19,13 @@ float:left;
     font-weight: bold;
     margin: 20px 30px;
     padding-right:80px;
+    padding-top: 20px;
     position: relative;
     float:left;
   }
 &--fa{
     color: white;
-    padding-top:30px;
+    padding-top:50px;
     float: left;
  }
  &__group{
@@ -48,7 +49,7 @@ float:left;
   &__header--group{
     margin:0 40px;
   }
-  &__header--group clearfix{
+  &__header--group{
     padding: 0px;
   }
   &__header--group--edit-btn{
@@ -57,16 +58,18 @@ float:left;
   border:1px solid #38AEF0;
   font-size: 15px;
   padding:12.5px 20px;
-  margin:28px 40px 0;
+  margin:-50px 40px 0;
+
  }
 &__header--members{
   color:#998;
   font-size: 12px;
-  margin:0 40px;
-  padding-top:85px;
+  margin: 5px;
+  padding-top:-20px;
+  padding-left:35px;
 }
 &__body{
-  height: calc( 100vh - 15% - 90px );
+  height: calc( 100vh - 70% - 90px );
   overflow-y: scroll;
 }
 &__body__message clearfix{
@@ -97,6 +100,7 @@ padding-left: 40px;
   height:90px;
   width: 100%;
   background-color: #B8C3C7;
+  margin-bottom: 20px;
  }
 &__footer-form{
   margin: 0 40px;
@@ -148,10 +152,11 @@ padding-left: 40px;
 
 p{
 font-size: 20px;
-float: left;
 margin:35px 0 15px;
+
 }
 
 h1{
   font-size: 10px;
+
 }
