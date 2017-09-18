@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
 
-  resources :groups, only:[:edit, :new,:create, :destory]
+  resources :groups, only:[:edit, :new, :create,]
 
   end

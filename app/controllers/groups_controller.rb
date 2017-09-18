@@ -9,16 +9,12 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
     else
-      render new_group_path
+      render new_group_path, notice: "失敗！"
     end
   end
 
   def index
   end
-
-  def show
-  end
-
 
   private
   def create_params
