@@ -17,7 +17,7 @@
   .main-side__header
     .main-side__header--group
       %p aaaa
-    %a.main-side__header--group--edit-btn{href: "/groups/1/edit"} edit
+    =link_to edit_group_path, class: "a.main-side__header--group--edit-btn" do
     .main-side__body
       .main-side__header--members MEMBERS:zume1019
       .main-side__body__message-list
