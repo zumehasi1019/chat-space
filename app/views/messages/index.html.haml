@@ -22,12 +22,11 @@
     .main-side__body
       .main-side__header--members MEMBERS:zume1019
       .main-side__body__message-list
-        - @messages.each do |msg|
-          .main-side__body__message.clearfix
-            .main-side__message-name user-name
-            .main-side__message-time 2017/9/11 14:46:54
-            .main-side__message-body
-              =msg.detail
+        .main-side__body__message.clearfix
+          .main-side__message-name 太郎
+          .main-side__message-time 2017/9/11 14:46:54
+          .main-side__message-body
+          - @messages.each do |msg|
     .main-side__footer
       = form_for([@group, @message], html: { class: "main-side__footer-form"}) do |f|
         .main-side__footer-body
