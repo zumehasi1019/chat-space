@@ -32,10 +32,10 @@ Please feel free to use a different markup language if you do not plan to run
 
 ### Association
 - has_many : groups, through : user_groups
-- has_many : users_groups
+- has_many : group_users
 - has_many : messages
 
-## users_groupsテーブル
+## group_users
 |Column|Type|Options|
 |------|----|-------|
 |user_id|string|null: false, index:true, unique: true|
@@ -52,7 +52,7 @@ Please feel free to use a different markup language if you do not plan to run
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many : users, through : users_groups
-- has_many : users_groups
+- has_many : users, through : group_users
+- has_many : group_users
 - has_many : messages
 
