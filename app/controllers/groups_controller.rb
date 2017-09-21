@@ -16,9 +16,9 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @message = Message.new
-    @group = current_user.groups.find(1)
-    @messages = @group.messages
+     @user = current_user
+     @group = current_user.groups
+
   end
 
   def edit

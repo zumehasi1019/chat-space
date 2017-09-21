@@ -3,16 +3,22 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group = Group.find(params[:group_id])
-    @message = Message.new
+    @group_name = current_user.groups.find(params[:group_id]).name
+    @message = current_user.groups.find(params[:group_id]).messages
+    @current_message = Message.new
+    @user = current_user
+    @group = current_user.groups
+    @current_group =  current_user.groups.find(params[:group_id])
+    @group_member = @current_group.users
+
   end
 
   def create
     @message = Message.new (message_params)
       if @message.save
-        redirect_to root_path
+        redirect_to group_messages_path(params[:group_id])
       else
-        render new_group_path, notice: "メッセージを入力してね"
+        render new_group_path, alert: "メッセージを入力してね"
       end
   end
 

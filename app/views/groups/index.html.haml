@@ -1,6 +1,7 @@
 .chat-side
   .chat-side__user
-    .chat-side__name user-name
+    .chat-side__name
+      =@user.name
     =link_to new_group_path, class: "chat-side__user--new-group" do
       %i.chat-side--fa.fa.fa-pencil-square-o.fa-small
     =link_to edit_user_path(current_user), class: "hat-side__user--edit-user" do
@@ -8,31 +9,8 @@
     .chat-side__groups
   .chat-side__group
     .chat-side__group__chat
-    - current_user.groups.each do |grp|
+    - @group.each do |grp|
       .chat-side__group__name
-        = grp.name
+      =link_to group_messages_path(grp.id) do
+        =grp.name
 
-/ 画面右側
-.main-side
-  .main-side__header
-    .main-side__header--group
-      %p aaaa
-    %a.main-side__header--group--edit-btn{href: "/groups/1/edit"} edit
-    / =link_to edit_group_path, class: "a.main-side__header--group--edit-btn" do
-    .main-side__body
-      .main-side__header--members MEMBERS:zume1019
-      .main-side__body__message-list
-        - @messages.each do |msg|
-          .main-side__body__message.clearfix
-            .main-side__message-name user-name
-            .main-side__message-time 2017/9/11 14:46:54
-            .main-side__message-body
-              =msg.detail
-    .main-side__footer
-      = form_for([@group, @message], html: { class: "main-side__footer-form"}) do |f|
-        .main-side__footer-body
-          = f.text_field :detail, {id: "message_body",class: "message"}
-          = f.label :image, {for: "message_image", class: "chat-file"} do
-            = f.file_field :detail, { id: "message_image", class: "image", }
-            %i.fa.fa-file-image-o.fa-small
-          = f.submit "Send", {class: "submit"}
