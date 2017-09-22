@@ -13,6 +13,8 @@
       .chat-side__group__name
         =link_to group_messages_path(grp.id) do
           =grp.name
+      .chat-side__group__name__chat
+        =grp.messages.last.try(:detail)
 
 / 画面右側
 .main-side
@@ -33,12 +35,14 @@
             .main-side__message-time
             =msg.created_at.strftime("%Y-%m-%d %H:%M:%S")
             .main-side__message-body
-              =msg.detail
+              = msg.detail
+              = msg.image.url
+              = image_tag "#{msg.image.url}"
     .main-side__footer
       = form_for([@current_group, @current_message], html: { class: "main-side__footer-form"}) do |f|
         .main-side__footer-body
           = f.text_field :detail, {id: "message_body", class: "message"}
           = f.label :image, {for: "message_image", class: "chat-file"} do
-            = f.file_field :detail, { id: "message_image", class: "image", }
+            = f.file_field :image, { id: "message_image", class: "image", }
             %i.fa.fa-file-image-o.fa-small
           = f.submit "Send", {class: "submit"}
