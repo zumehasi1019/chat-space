@@ -1,7 +1,7 @@
 .chat-side
   .chat-side__user
     .chat-side__name
-      =@user.name
+      =current_user.name
     =link_to new_group_path, class: "chat-side__user--new-group" do
       %i.chat-side--fa.fa.fa-pencil-square-o.fa-small
     =link_to edit_user_path(current_user), class: "hat-side__user--edit-user" do
