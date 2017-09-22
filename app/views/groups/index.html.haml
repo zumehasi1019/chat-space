@@ -9,8 +9,8 @@
     .chat-side__groups
   .chat-side__group
     .chat-side__group__chat
-    - @group.each do |grp|
-      .chat-side__group__name
-      =link_to group_messages_path(grp.id) do
-        =grp.name
+      - @group.each do |grp|
+        .chat-side__group__name
+        =link_to group_messages_path(grp.id) do
+          =grp.name
 
