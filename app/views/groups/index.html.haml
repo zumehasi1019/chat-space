@@ -4,13 +4,7 @@
       =current_user.name
     =link_to new_group_path, class: "chat-side__user--new-group" do
       %i.chat-side--fa.fa.fa-pencil-square-o.fa-small
-    =link_to edit_user_path(current_user), class: "hat-side__user--edit-user" do
+    =link_to edit_user_path(current_user), class: "chat-side__user--edit-user" do
       %i.chat-side--fa.fa.fa-cog.fa-small
-    .chat-side__groups
-  .chat-side__group
-    .chat-side__group__chat
-      - @group.each do |grp|
-        .chat-side__group__name
-        =link_to group_messages_path(grp.id) do
-          =grp.name
+  =render 'sidebar'
 

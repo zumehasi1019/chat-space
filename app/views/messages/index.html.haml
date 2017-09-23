@@ -6,15 +6,8 @@
       %i.chat-side--fa.fa.fa-pencil-square-o.fa-small
     =link_to edit_user_path(current_user), class: "chat-side__user--edit-user" do
       %i.chat-side--fa.fa.fa-cog.fa-small
-    .chat-side__groups
-  .chat-side__group
-    .chat-side__group__chat
-    - @group.each do |grp|
-      .chat-side__group__name
-        =link_to group_messages_path(grp.id) do
-          =grp.name
-      .chat-side__group__name__chat
-        =grp.messages.last.try(:detail)
+  = render 'groups/sidebar'
+
 
 / 画面右側
 .main-side
