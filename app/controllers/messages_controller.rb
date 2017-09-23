@@ -3,11 +3,10 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group_name = current_user.groups.find(params[:group_id]).name
-    @message = current_user.groups.find(params[:group_id]).messages
-    @current_message = Message.new
     @group = current_user.groups
-    @current_group =  current_user.groups.find(params[:group_id])
+    @current_group =  @group.find(params[:group_id])
+    @message = @current_group.messages
+    @current_message = Message.new
     @group_member = @current_group.users
   end
 

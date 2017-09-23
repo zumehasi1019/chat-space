@@ -13,7 +13,7 @@
 .main-side
   .main-side__header
     .main-side__header--group
-      =@group_name
+      =@current_group.name
     =link_to "edit", edit_group_path(params[:group_id]), class: "main-side__header--group--edit-btn"
     .main-side__body
       .main-side__header--members
