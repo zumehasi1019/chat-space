@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
     else
       "メッセージがありません"
     end
-end
+  end
 
   private
   def detail_or_image
