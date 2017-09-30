@@ -15,12 +15,16 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'faker'
+  gem 'rails-controller-testing'
+
 
 end
 
