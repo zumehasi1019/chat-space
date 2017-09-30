@@ -25,7 +25,7 @@
     &--fa{
       color: white;
       padding-top:50px;
-      float: left;
+      // float: left;
       }
     &__group{
       height: 85%
@@ -48,6 +48,7 @@
       }
         &__header--group{
           margin:0 40px;
+          margin-top: 30px;
          }
         &__header--group{
           padding: 0px;
@@ -117,6 +118,7 @@
          width: 100%;
          background-color: #B8C3C7;
          margin-bottom: 20px;
+         margin-top: 35px;
          }
          &__footer-form{
          margin: 0 40px;
@@ -164,6 +166,11 @@
    right: 0;
    border: none;
   }
+
+.chat-side__user--new-group{
+  padding-left:55px;
+  float: left;
+}
 
 
  p{
