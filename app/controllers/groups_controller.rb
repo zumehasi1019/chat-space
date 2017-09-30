@@ -3,12 +3,12 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def new
-    @group = Group.new
+    @groups = Group.new
   end
 
   def create
-    @group = Group.new(group_params)
-    if @group.save
+    @groups = Group.new(group_params)
+    if @groups.save
       redirect_to root_path, notice: "グループを作成しました"
     else
       render new_group_path, notice: "失敗！"
@@ -16,14 +16,14 @@ class GroupsController < ApplicationController
   end
 
   def index
-     @group = current_user.groups
+     @groups = current_user.groups
   end
 
   def edit
   end
 
   def update
-    @group = Group.find(params[:id])
+    @groups = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to root_path, notice: "グループの編集できた!"
     else
@@ -38,7 +38,7 @@ class GroupsController < ApplicationController
   end
 
   def set_group
-    @group = Group.find(params[:id])
+    @groups = Group.find(params[:id])
   end
 
 end

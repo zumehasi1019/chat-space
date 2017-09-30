@@ -1,12 +1,12 @@
-= form_for @group do |t|
-  - if @group.errors.any?
+= form_for @groups do |t|
+  - if @groups.errors.any?
     .chat-group-form__errors
       %h2
-      = @group.errors.count
+      = @groups.errors.count
       件のエラーがあります。
       #error_explanation
         %ul
-          - @group.errors.full_messages.each do |msg|
+          - @groups.errors.full_messages.each do |msg|
             %li= msg
   /   %ul
   /     %li エラーです
