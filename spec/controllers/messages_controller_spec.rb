@@ -10,7 +10,7 @@ describe MessagesController, type: :controller do
       login_user user
     end
 
-    it "renders the :index template" do
+    it "renders the :index template if user is signed in" do
     end
 
     it "assigns the requested tweet to @current_group" do
@@ -24,7 +24,7 @@ describe MessagesController, type: :controller do
     end
   end
 
-  describe 'GET #index' do
+  context 'user is not signed in' do
     it "if user is not signed in redirected to the :index template " do
       get :index, group_id: group
       expect(response).to redirect_to(new_user_session_path)
@@ -45,7 +45,7 @@ describe MessagesController, type: :controller do
       expect(response).to redirect_to(group_messages_path)
     end
 
-it "could not save a message in the database when a user is signed in" do
+    it "could not save a message in the database when a user is signed in" do
       expect{post :create, group_id: group, message: attributes_for(:message, detail:nil, image:nil)}.not_to change(Message,:count)
     end
 
@@ -55,7 +55,7 @@ it "could not save a message in the database when a user is signed in" do
       end
     end
 
-  describe 'POST #create' do
+  context 'if user cannot save' do
     it "redirect when a user isn't signed in tries to send a message" do
       post :create, group_id: group, message: attributes_for(:message)
       expect(response).to redirect_to(new_user_session_path)
