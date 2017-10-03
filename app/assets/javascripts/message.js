@@ -1,15 +1,21 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<p>
-                  <strong>
-                    <a href=${message.id}>${message.user_name}</a>
-                    ：
-                  </strong>
-                  ${message.body}
-                </p>`
+     console.log(comment);
+    var html = `<div class = main-side__body__message>
+                  <div class = "main-side__message-name">
+                  ${comment.user_name}
+                  </div>
+                    <div class = "main-side__message-time">
+                  ${comment.text_time}
+                    </div>
+                      <div class = "main-side__message-body">
+                  ${comment.text}
+                      </div>
+                </div>
+                  `
     return html;
   }
-  $('#message_body').on('submit', function(e){
+  $('.main-side__footer-form').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -23,8 +29,12 @@ $(function(){
   })
   .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html)
-      $('.message_body').val('')
+      $('.main-side__body__message-list').append(html);
+      $('.main-side__body').animate({scrollTop: $('.main-side__body')[0].scrollHeight}, 'fast');
+      $('#message_body').val('');
+    })
+    .fail(function(data){
+      alert('error');
     })
   })
 });
