@@ -24,9 +24,9 @@
         - @message.each do |msg|
           .main-side__body__message.clearfix
             .main-side__message-name
-            ="#{msg.user.name}"
+              ="#{msg.user.name}"
             .main-side__message-time
-            =msg.created_at.strftime("%Y-%m-%d %H:%M:%S")
+              = msg.created_at.strftime("%Y-%m-%d %H:%M:%S")
             .main-side__message-body
               = msg.detail
               = msg.image.url
