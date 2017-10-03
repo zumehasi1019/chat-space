@@ -24,7 +24,6 @@ $(function(){
      }
      else {
        appendNoUser("一致する名前がありません");
-
      }
    })
      .fail(function() {
