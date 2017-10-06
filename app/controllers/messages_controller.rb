@@ -6,8 +6,12 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @current_group =  Group.find(params[:group_id])
     @message = @current_group.messages
-    @current_message = Message.new
     @group_member = @current_group.users
+    @current_message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
