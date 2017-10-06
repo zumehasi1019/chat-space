@@ -52,7 +52,6 @@ $(function(){
       var insertHTML = '';
       json.forEach(function(message) {
         if (message.id > id ) {
-          console.log(message)
            insertHTML += buildHTML(message);
           $('.main-side__body__message-list').append(insertHTML);
         }
