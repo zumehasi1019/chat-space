@@ -1,14 +1,15 @@
 $(function(){
-  function buildHTML(comment){
-    var html = `<div class = main-side__body__message>
+  function buildHTML(message){
+
+    var html = `<div class = "main-side__body__message" data-message-id="${message.id}">
                   <div class = "main-side__message-name">
-                  ${comment.user_name}
+                  ${message.user_name}
                   </div>
                     <div class = "main-side__message-time">
-                  ${comment.text_time}
+                  ${message.text_time}
                     </div>
                       <div class = "main-side__message-body">
-                  ${comment.text}
+                  ${message.text}
                       </div>
                 </div>
                   `
@@ -36,4 +37,30 @@ $(function(){
       alert('error');
     })
   })
+
+
+  var interval = setInterval(function() {
+  if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    $.ajax({
+      url: location.href,
+      processData: false,
+      dataType:'json',
+      contentType: false
+    })
+    .done(function(json) {
+      var id = $('.main-side__body__message').last().data('message-id');
+      var insertHTML = '';
+      json.forEach(function(message) {
+        if (message.id > id ) {
+           insertHTML += buildHTML(message);
+          $('.main-side__body__message-list').append(insertHTML);
+        }
+      });
+    })
+    .fail(function(json) {
+      alert('自動更新に失敗しました');
+    });
+  } else {
+    clearInterval(interval);
+   }} , 5 * 1000 );
 });
